@@ -775,7 +775,9 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 1
     UNet: 1
+    Unity Ads: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -789,11 +791,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 17ec623c-4e2a-4b70-bf3b-af178752c2c0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: 2DMobileGame
+  organizationId: twosomeplaceshdp
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

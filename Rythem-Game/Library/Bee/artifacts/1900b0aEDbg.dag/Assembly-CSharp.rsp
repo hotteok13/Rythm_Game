@@ -355,6 +355,8 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.Monetization.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/CenterFlame.cs"
+"Assets/Script/Manager/PlayManager.cs"
+"Assets/Script/Manager/TimingManager.cs"
 "Assets/Script/Note.cs"
 -langversion:9.0
 

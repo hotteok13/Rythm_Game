@@ -10,6 +10,8 @@ public class Note : MonoBehaviour
     //Note »çÁø
     private Image noteImage;
 
+    //public static Note instance;
+
     void Start()
     {
         noteImage = GetComponent<Image>();
@@ -20,10 +22,11 @@ public class Note : MonoBehaviour
         noteImage.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
         transform.localPosition += Vector3.down * noteSpeed * Time.deltaTime;
     }
 
-    
+
+
 }

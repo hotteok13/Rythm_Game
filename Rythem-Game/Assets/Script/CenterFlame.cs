@@ -5,13 +5,16 @@ using UnityEngine;
 public class CenterFlame : MonoBehaviour
 {
     // 노래 소스
-    AudioSource myAudio;
+    AudioSource  Audio;
+    [SerializeField] AudioClip [] clip;  
     // 노래 시작
     bool musicStart = false;
 
     void Start()
     {
-        myAudio = GetComponent<AudioSource>();
+        Audio = GetComponent<AudioSource>();
+        Audio.clip = clip[0];
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +23,7 @@ public class CenterFlame : MonoBehaviour
         {
             if (collision.CompareTag("Note"))
             {
-                myAudio.Play();
+                Audio.Play();
                 musicStart = true;
             }
         }

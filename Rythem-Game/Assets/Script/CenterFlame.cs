@@ -14,7 +14,7 @@ public class CenterFlame : MonoBehaviour
     {
         Audio = GetComponent<AudioSource>();
         Audio.clip = clip[0];
-
+    
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

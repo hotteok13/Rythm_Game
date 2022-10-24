@@ -28,6 +28,7 @@ public class TimingManager : MonoBehaviour
 
     public void CheckTiming()
     {
+
         for (int i = 0; i < boxNoteList.Count; i++)
         {
             //boxNoteList[i]에 값을 자기 자신의 위치값 - 부모의 위치값을 준다
@@ -61,10 +62,12 @@ public class TimingManager : MonoBehaviour
                     }
                     return;
                 }
+
             }
         }
 
         Debug.Log("Miss");
     }
+    
 
 }

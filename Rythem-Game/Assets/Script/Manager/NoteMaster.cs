@@ -56,12 +56,6 @@ public class NoteMaster : MonoBehaviour
         NewNote();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Note"))
-        {
-            theTimingManager.boxNoteList.Remove(collision.gameObject);
-            Destroy(collision.gameObject,0.5f);
-        }
-    }
+
+
 }

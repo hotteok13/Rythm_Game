@@ -357,8 +357,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/CenterFlame.cs"
 "Assets/Script/Manager/DataManager.cs"
+"Assets/Script/Manager/DestroyManager.cs"
 "Assets/Script/Manager/NoteMaster.cs"
 "Assets/Script/Manager/PlayManager.cs"
+"Assets/Script/Manager/TextManager.cs"
 "Assets/Script/Manager/TimingManager.cs"
 "Assets/Script/Note.cs"
 -langversion:9.0

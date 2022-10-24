@@ -11,13 +11,22 @@ public class TimingManager : MonoBehaviour
     [SerializeField] Transform center = null; // 판정 범위의 중심
     [SerializeField] RectTransform[] timingRect = null; // 다양한 판정 범위
     Vector2[] timingBoxs = null; // 판정 범위 최소값 x, 최대값 y
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
-        instance = this;
-        timingBoxs = new Vector2[4];
-        // timingBoxs 배열 4개 생성
+        
+        timingBoxs = new Vector2[5];
+        // timingBoxs 배열 5개 생성
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             // center.localPosition.y - timingRect[i].rect.height / 2는 X좌표 값
             // center.localPosition.y + timingRect[i].rect.height / 2는 Y좌표 값
@@ -48,16 +57,34 @@ public class TimingManager : MonoBehaviour
                     switch (j)
                     {
                         case 0:
-                            Debug.Log("Perfect");
+                            TextManager.instance.noteAccuracyText.text = "Perfect";
+                            TextManager.instance.comboCount++;
+                            TextManager.instance.accuracyCount += 100.00f;
+                            TextManager.instance.count++;
                             break;
                         case 1:
-                            Debug.Log("Great");
+                            TextManager.instance.noteAccuracyText.text="Great";
+                            TextManager.instance.comboCount++;
+                            TextManager.instance.accuracyCount += 80.00f;
+                            TextManager.instance.count++;
                             break;
                         case 2:
-                            Debug.Log("Good");
+                            TextManager.instance.noteAccuracyText.text="Good";
+                            TextManager.instance.comboCount++;
+                            TextManager.instance.accuracyCount += 50.00f;
+                            TextManager.instance.count++;
                             break;
                         case 3:
-                            Debug.Log("Bad");
+                            TextManager.instance.noteAccuracyText.text = "Bad";
+                            TextManager.instance.comboCount++;
+                            TextManager.instance.accuracyCount += 20.00f;
+                            TextManager.instance.count++;
+                            break;
+                        case 4:
+                            TextManager.instance.noteAccuracyText.text = "Miss";
+                            TextManager.instance.comboCount=0;
+                            TextManager.instance.accuracyCount += 0f;
+                            TextManager.instance.count++;
                             break;
                     }
                     return;
@@ -65,8 +92,6 @@ public class TimingManager : MonoBehaviour
 
             }
         }
-
-        Debug.Log("Miss");
     }
     
 

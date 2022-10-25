@@ -89,10 +89,18 @@ public class TimingManager : MonoBehaviour
                     }
                     return;
                 }
+                else if (timingBoxs[j].x >= t_notePosY)
+                {
+                    TextManager.instance.noteAccuracyText.text = "Miss";
+                    TextManager.instance.comboCount = 0;
+                    TextManager.instance.accuracyCount += 0f;
+                    TextManager.instance.count++;
+                }
 
             }
         }
     }
-    
+
+
 
 }

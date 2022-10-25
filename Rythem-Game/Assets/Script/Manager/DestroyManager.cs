@@ -8,10 +8,11 @@ public class DestroyManager : MonoBehaviour
     {
         if (collision.CompareTag("Note"))
         {
-            
+
             TimingManager.instance.boxNoteList.Remove(collision.gameObject);
-            Destroy(collision.gameObject, 0.5f);
+            collision.gameObject.SetActive(false);
             TimingManager.instance.CheckTiming();
+
         }
     }
 }

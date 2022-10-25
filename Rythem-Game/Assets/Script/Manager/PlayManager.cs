@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] Key;
     void Start()
     {
         
@@ -12,7 +12,19 @@ public class PlayManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            TimingManager.instance.CheckTiming();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TimingManager.instance.CheckTiming();
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            TimingManager.instance.CheckTiming();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
         {
             TimingManager.instance.CheckTiming();
         }

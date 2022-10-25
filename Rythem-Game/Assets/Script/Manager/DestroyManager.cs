@@ -10,7 +10,7 @@ public class DestroyManager : MonoBehaviour
         {
 
             TimingManager.instance.boxNoteList.Remove(collision.gameObject);
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
             TimingManager.instance.CheckTiming();
 
         }

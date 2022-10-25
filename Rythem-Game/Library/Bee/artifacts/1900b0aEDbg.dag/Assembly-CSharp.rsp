@@ -361,7 +361,8 @@
 "Assets/Script/Manager/PlayManager.cs"
 "Assets/Script/Manager/TextManager.cs"
 "Assets/Script/Manager/TimingManager.cs"
-"Assets/Script/Note.cs"
+"Assets/Script/Note/Note.cs"
+"Assets/Script/Note/NoteSpeed.cs"
 -langversion:9.0
 
 /deterministic

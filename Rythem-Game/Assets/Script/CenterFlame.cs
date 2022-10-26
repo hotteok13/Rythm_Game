@@ -25,6 +25,7 @@ public class CenterFlame : MonoBehaviour
             {
                 Audio.Play();
                 musicStart = true;
+                LoadMap.instance.NewLoadMap();
             }
         }
     }

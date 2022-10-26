@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
-    public List<GameObject> boxNoteList = new List<GameObject>();
 
 
     public static TimingManager instance;
@@ -38,10 +37,10 @@ public class TimingManager : MonoBehaviour
     public void CheckTiming()
     {
 
-        for (int i = 0; i < boxNoteList.Count; i++)
+        for (int i = 0; i < AddNote.instance.boxNoteList.Count; i++)
         {
             //boxNoteList[i]에 값을 자기 자신의 위치값 - 부모의 위치값을 준다
-            float t_notePosY = boxNoteList[i].transform.localPosition.y;
+            float t_notePosY = AddNote.instance.boxNoteList[i].transform.localPosition.y;
 
             // 판정 순서 : Perfect -> Great -> Good -> Bad
             for (int j = 0; j < timingBoxs.Length; j++)
@@ -51,8 +50,8 @@ public class TimingManager : MonoBehaviour
                 if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                 {
                     // 컴포넌트를 비활성화
-                    boxNoteList[i].GetComponent<Note>().HideNote();
-                    boxNoteList.RemoveAt(i);
+                    AddNote.instance.boxNoteList[i].GetComponent<Note>().HideNote();
+                    AddNote.instance.boxNoteList.RemoveAt(i);
 
                     switch (j)
                     {

@@ -359,10 +359,22 @@
 "Assets/Script/Manager/DestroyManager.cs"
 "Assets/Script/Manager/NoteMaster.cs"
 "Assets/Script/Manager/PlayManager.cs"
+"Assets/Script/Manager/Scene.cs"
 "Assets/Script/Manager/TextManager.cs"
 "Assets/Script/Manager/TimingManager.cs"
+"Assets/Script/Note/AddNote.cs"
+"Assets/Script/Note/LoadMap.cs"
 "Assets/Script/Note/Note.cs"
 "Assets/Script/Note/NoteSpeed.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/CheckMusicVolume.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/CheckSFXVolume.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/ExtraLinks.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/FlexibleUI.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/FlexibleUIData.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/FlexibleUIElement.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/MainMenuNew.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/OptionsMenuNew.cs"
+"Assets/SlimUI/Modern Menu 1/Scripts/ResetDemo.cs"
 -langversion:9.0
 
 /deterministic

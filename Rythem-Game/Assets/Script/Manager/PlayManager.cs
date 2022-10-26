@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class PlayManager : MonoBehaviour
 {
-    public GameObject[] Key;
-    void Start()
-    {
-        
-    }
+
 
     void Update()
     {

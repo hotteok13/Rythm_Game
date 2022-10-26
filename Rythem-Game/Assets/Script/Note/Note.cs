@@ -23,6 +23,7 @@ public class Note : MonoBehaviour
 
     void Start()
     {
+        //TimingManager.instance.boxNoteList.Add(gameObject);
         noteImage = GetComponent<Image>();
     }
 

@@ -9,7 +9,7 @@ public class DestroyManager : MonoBehaviour
         if (collision.CompareTag("Note"))
         {
 
-            TimingManager.instance.boxNoteList.Remove(collision.gameObject);
+            AddNote.instance.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
             TimingManager.instance.CheckTiming();
 

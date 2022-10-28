@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Note
+  - Song
+  - Note1
+  - Note2
+  - Note3
+  - Note4
+  - TimingBox
   layers:
   - Default
   - TransparentFX

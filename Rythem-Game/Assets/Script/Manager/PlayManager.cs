@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class PlayManager : MonoBehaviour
 {
-
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            TimingManager.instance.CheckTiming();
+            TimingManager.instance.CheckTiming(1);
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            TimingManager.instance.CheckTiming();
+            TimingManager.instance.CheckTiming(2);
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            TimingManager.instance.CheckTiming();
+            TimingManager.instance.CheckTiming(3);
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            TimingManager.instance.CheckTiming();
+            TimingManager.instance.CheckTiming(4);
         }
     }
+
 }
+

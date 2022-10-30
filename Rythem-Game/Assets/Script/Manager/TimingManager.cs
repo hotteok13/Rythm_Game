@@ -259,6 +259,11 @@ public class TimingManager : MonoBehaviour
         }
     }
 
+    public void LongCheckTiming(int key)
+    {
+
+    }
+
 
 
 }

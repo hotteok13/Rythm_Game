@@ -6,6 +6,11 @@ public class NoteSpeed : MonoBehaviour
 {
     public float noteSpeed = 400.0f;
 
+    public bool key1;
+    public bool key2;
+    public bool key3;
+    public bool key4;
+
     public static NoteSpeed instance;
 
     private void Awake()
@@ -14,11 +19,10 @@ public class NoteSpeed : MonoBehaviour
         {
             instance = this;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        key1 = false;
+        key2 = false;
+        key3 = false;
+        key4 = false;
+    }       
 }

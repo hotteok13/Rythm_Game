@@ -358,7 +358,6 @@
 "Assets/Script/CenterFlame.cs"
 "Assets/Script/Manager/DataManager.cs"
 "Assets/Script/Manager/DestroyManager.cs"
-"Assets/Script/Manager/NoteMaster.cs"
 "Assets/Script/Manager/PlayManager.cs"
 "Assets/Script/Manager/Scene.cs"
 "Assets/Script/Manager/TextManager.cs"

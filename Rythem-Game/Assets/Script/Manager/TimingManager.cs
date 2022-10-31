@@ -34,8 +34,12 @@ public class TimingManager : MonoBehaviour
         }
     }
 
-    public void CheckTiming(int key)
+    public void CheckTiming(int key,bool cheak)
     {
+        if (cheak == true)
+        {
+            return;
+        }
 
         switch (key)
         {
@@ -259,9 +263,394 @@ public class TimingManager : MonoBehaviour
         }
     }
 
-    public void LongCheckTiming(int key)
+    public void LongCheckTiming(int key,bool cheak)
     {
+        if (cheak == false)
+        {
+            switch (key)
+            {
+                case 1:
+                    for (int i = 0; i < AddNote.instance.boxNoteList1.Count; i++)
+                    {
+                        float t_notePosY = AddNote.instance.boxNoteList1[i].transform.position.y - 225;
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+                                if (NoteSpeed.instance.long1 == true)
+                                {
+                                    AddNote.instance.boxNoteList1[0].GetComponent<Note>().HideNote();
+                                    AddNote.instance.boxNoteList1.RemoveAt(0);
+                                }
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.noteAccuracyText.text = "Perfect";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 100.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.noteAccuracyText.text = "Great";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 80.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.noteAccuracyText.text = "Good";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 50.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.noteAccuracyText.text = "Bad";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 20.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.noteAccuracyText.text = "Miss";
+                                        TextManager.instance.comboCount = 0;
+                                        TextManager.instance.accuracyCount += 0f;
+                                        TextManager.instance.count++;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < AddNote.instance.boxNoteList2.Count; i++)
+                    {
 
+                        float t_notePosY = AddNote.instance.boxNoteList2[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+                                if (NoteSpeed.instance.long2 == true)
+                                {
+                                    AddNote.instance.boxNoteList2[0].GetComponent<Note>().HideNote();
+                                    AddNote.instance.boxNoteList2.RemoveAt(0);
+                                }
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.noteAccuracyText.text = "Perfect";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 100.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.noteAccuracyText.text = "Great";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 80.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.noteAccuracyText.text = "Good";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 50.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.noteAccuracyText.text = "Bad";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 20.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.noteAccuracyText.text = "Miss";
+                                        TextManager.instance.comboCount = 0;
+                                        TextManager.instance.accuracyCount += 0f;
+                                        TextManager.instance.count++;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < AddNote.instance.boxNoteList3.Count; i++)
+                    {
+
+                        float t_notePosY = AddNote.instance.boxNoteList3[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+                                if (NoteSpeed.instance.long3 == true)
+                                {
+                                    AddNote.instance.boxNoteList3[0].GetComponent<Note>().HideNote();
+                                    AddNote.instance.boxNoteList3.RemoveAt(0);
+                                }
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.noteAccuracyText.text = "Perfect";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 100.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.noteAccuracyText.text = "Great";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 80.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.noteAccuracyText.text = "Good";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 50.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.noteAccuracyText.text = "Bad";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 20.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.noteAccuracyText.text = "Miss";
+                                        TextManager.instance.comboCount = 0;
+                                        TextManager.instance.accuracyCount += 0f;
+                                        TextManager.instance.count++;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < AddNote.instance.boxNoteList4.Count; i++)
+                    {
+
+                        float t_notePosY = AddNote.instance.boxNoteList4[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+                                if (NoteSpeed.instance.long4 == true)
+                                {
+                                    AddNote.instance.boxNoteList4[0].GetComponent<Note>().HideNote();
+                                    AddNote.instance.boxNoteList4.RemoveAt(0);
+                                }
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.noteAccuracyText.text = "Perfect";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 100.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.noteAccuracyText.text = "Great";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 80.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.noteAccuracyText.text = "Good";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 50.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.noteAccuracyText.text = "Bad";
+                                        TextManager.instance.comboCount++;
+                                        TextManager.instance.accuracyCount += 20.00f;
+                                        TextManager.instance.count++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.noteAccuracyText.text = "Miss";
+                                        TextManager.instance.comboCount = 0;
+                                        TextManager.instance.accuracyCount += 0f;
+                                        TextManager.instance.count++;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            switch (key)
+            {
+                case 1:
+                    for (int i = 0; i < AddNote.instance.boxNoteList1.Count; i++)
+                    {
+                        float t_notePosY = AddNote.instance.boxNoteList1[i].transform.position.y - 225;
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.comboCount = 0;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < AddNote.instance.boxNoteList2.Count; i++)
+                    {
+
+                        float t_notePosY = AddNote.instance.boxNoteList2[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.comboCount = 0;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < AddNote.instance.boxNoteList3.Count; i++)
+                    {
+
+                        float t_notePosY = AddNote.instance.boxNoteList3[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.comboCount = 0;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < AddNote.instance.boxNoteList4.Count; i++)
+                    {
+
+                        float t_notePosY = AddNote.instance.boxNoteList4[i].transform.position.y - 225;
+
+                        // 판정 순서 : Perfect -> Great -> Good -> Bad
+                        for (int j = 0; j < timingBoxs.Length; j++)
+                        {
+                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
+                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
+                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
+                            {
+                                // 컴포넌트를 비활성화
+
+                                switch (j)
+                                {
+                                    case 0:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 1:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 2:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 3:
+                                        TextManager.instance.comboCount++;
+                                        break;
+                                    case 4:
+                                        TextManager.instance.comboCount = 0;
+                                        break;
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    break;
+            }
+        }
     }
 
 

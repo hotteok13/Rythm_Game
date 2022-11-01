@@ -58,19 +58,19 @@ public class PlayManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                NoteSpeed.instance.long1 = false;
+                NoteSpeed.instance.long2 = false;
                 TimingManager.instance.LongCheckTiming(2, NoteSpeed.instance.key2);
                 NoteSpeed.instance.key2 = true;
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-                NoteSpeed.instance.long1 = false;
+                NoteSpeed.instance.long3 = false;
                 TimingManager.instance.LongCheckTiming(3, NoteSpeed.instance.key3);
                 NoteSpeed.instance.key3 = true;
             }
             if (Input.GetKeyDown(KeyCode.K))
             {
-                NoteSpeed.instance.long1 = false;
+                NoteSpeed.instance.long4 = false;
                 TimingManager.instance.LongCheckTiming(4, NoteSpeed.instance.key4);
                 NoteSpeed.instance.key4 = true;
             }

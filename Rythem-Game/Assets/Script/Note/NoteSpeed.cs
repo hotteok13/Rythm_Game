@@ -16,6 +16,8 @@ public class NoteSpeed : MonoBehaviour
     public bool long3;
     public bool long4;
 
+    public bool noteSpeedSetting;
+
     public static NoteSpeed instance;
 
     private void Awake()
@@ -34,5 +36,7 @@ public class NoteSpeed : MonoBehaviour
         long2 = false;
         long3 = false;
         long4 = false;
+
+        noteSpeedSetting = false;
     }       
 }

@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteSpeed : MonoBehaviour
+public class KeyManager : MonoBehaviour
 {
-    public float noteSpeed = 400.0f;
-
     public bool key1;
     public bool key2;
     public bool key3;
@@ -15,10 +13,7 @@ public class NoteSpeed : MonoBehaviour
     public bool long2;
     public bool long3;
     public bool long4;
-
-    public bool noteSpeedSetting;
-
-    public static NoteSpeed instance;
+    public static KeyManager instance;
 
     private void Awake()
     {
@@ -36,7 +31,5 @@ public class NoteSpeed : MonoBehaviour
         long2 = false;
         long3 = false;
         long4 = false;
-
-        noteSpeedSetting = false;
-    }       
+    } 
 }

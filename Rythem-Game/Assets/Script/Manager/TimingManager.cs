@@ -281,7 +281,7 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (NoteSpeed.instance.long1 == true)
+                                if (KeyManager.instance.long1 == true)
                                 {
                                     AddNote.instance.boxNoteList1[0].GetComponent<Note>().HideNote();
                                     AddNote.instance.boxNoteList1.RemoveAt(0);
@@ -338,7 +338,7 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (NoteSpeed.instance.long2 == true)
+                                if (KeyManager.instance.long2 == true)
                                 {
                                     AddNote.instance.boxNoteList2[0].GetComponent<Note>().HideNote();
                                     AddNote.instance.boxNoteList2.RemoveAt(0);
@@ -395,7 +395,7 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (NoteSpeed.instance.long3 == true)
+                                if (KeyManager.instance.long3 == true)
                                 {
                                     AddNote.instance.boxNoteList3[0].GetComponent<Note>().HideNote();
                                     AddNote.instance.boxNoteList3.RemoveAt(0);
@@ -452,7 +452,7 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (NoteSpeed.instance.long4 == true)
+                                if (KeyManager.instance.long4 == true)
                                 {
                                     AddNote.instance.boxNoteList4[0].GetComponent<Note>().HideNote();
                                     AddNote.instance.boxNoteList4.RemoveAt(0);
@@ -515,16 +515,32 @@ public class TimingManager : MonoBehaviour
                                 switch (j)
                                 {
                                     case 0:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer1 = 0;
+                                        }
                                         break;
                                     case 1:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer1 = 0;
+                                        }
                                         break;
                                     case 2:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer1 = 0;
+                                        }
                                         break;
                                     case 3:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer1 = 0;
+                                        }
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;
@@ -553,16 +569,32 @@ public class TimingManager : MonoBehaviour
                                 switch (j)
                                 {
                                     case 0:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer2 = 0;
+                                        }
                                         break;
                                     case 1:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer2 = 0;
+                                        }
                                         break;
                                     case 2:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer2 = 0;
+                                        }
                                         break;
                                     case 3:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer2 = 0;
+                                        }
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;
@@ -591,16 +623,32 @@ public class TimingManager : MonoBehaviour
                                 switch (j)
                                 {
                                     case 0:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer3 = 0;
+                                        }
                                         break;
                                     case 1:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer3 = 0;
+                                        }
                                         break;
                                     case 2:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer3 = 0;
+                                        }
                                         break;
                                     case 3:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer3 = 0;
+                                        }
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;
@@ -629,16 +677,32 @@ public class TimingManager : MonoBehaviour
                                 switch (j)
                                 {
                                     case 0:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer4 = 0;
+                                        }
                                         break;
                                     case 1:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer4 = 0;
+                                        }
                                         break;
                                     case 2:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer4 = 0;
+                                        }
                                         break;
                                     case 3:
-                                        TextManager.instance.comboCount++;
+                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
+                                        {
+                                            TextManager.instance.comboCount++;
+                                            NoteMaster.instance.timer4 = 0;
+                                        }
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;

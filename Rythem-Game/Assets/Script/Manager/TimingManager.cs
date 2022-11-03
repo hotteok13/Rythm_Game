@@ -598,6 +598,7 @@ public class TimingManager : MonoBehaviour
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;
+                                        NoteMaster.instance.timer2 = 0;
                                         break;
                                 }
                                 return;
@@ -652,6 +653,7 @@ public class TimingManager : MonoBehaviour
                                         break;
                                     case 4:
                                         TextManager.instance.comboCount = 0;
+                                        NoteMaster.instance.timer3 = 0;
                                         break;
                                 }
                                 return;

@@ -11,10 +11,7 @@ public class NoteMaster : MonoBehaviour
     public bool noteSpeedSetting;
 
     public static NoteMaster instance;
-    public float timer1;
-    public float timer2;
-    public float timer3;
-    public float timer4;
+    public float [] timer;
     public int waitingTime;
 
     private void Awake()
@@ -25,10 +22,10 @@ public class NoteMaster : MonoBehaviour
         }
         noteSpeedSetting = false;
         waitingTime = 1;
-        timer1 = 0;
-        timer2 = 0;
-        timer3 = 0;
-        timer4 = 0;
+        for(int i = 0; i < 4; i++)
+        {
+            timer[i] = 0.0f;
+        }
     }
 
 }

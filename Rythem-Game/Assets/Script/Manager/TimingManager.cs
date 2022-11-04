@@ -281,11 +281,11 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (KeyManager.instance.long1 == true)
-                                {
-                                    AddNote.instance.boxNoteList1[0].GetComponent<Note>().HideNote();
-                                    AddNote.instance.boxNoteList1.RemoveAt(0);
-                                }
+                                //if (KeyManager.instance.longNote[0] == true)
+                                //{
+                                //    AddNote.instance.boxNoteList1[0].GetComponent<Note>().HideNote();
+                                //    AddNote.instance.boxNoteList1.RemoveAt(0);
+                                //}
                                 switch (j)
                                 {
                                     case 0:
@@ -338,11 +338,11 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (KeyManager.instance.long2 == true)
-                                {
-                                    AddNote.instance.boxNoteList2[0].GetComponent<Note>().HideNote();
-                                    AddNote.instance.boxNoteList2.RemoveAt(0);
-                                }
+                                //if (KeyManager.instance.long2 == true)
+                                //{
+                                //    AddNote.instance.boxNoteList2[0].GetComponent<Note>().HideNote();
+                                //    AddNote.instance.boxNoteList2.RemoveAt(0);
+                                //}
                                 switch (j)
                                 {
                                     case 0:
@@ -395,11 +395,11 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (KeyManager.instance.long3 == true)
-                                {
-                                    AddNote.instance.boxNoteList3[0].GetComponent<Note>().HideNote();
-                                    AddNote.instance.boxNoteList3.RemoveAt(0);
-                                }
+                               //if (KeyManager.instance.long3 == true)
+                               //{
+                               //    AddNote.instance.boxNoteList3[0].GetComponent<Note>().HideNote();
+                               //    AddNote.instance.boxNoteList3.RemoveAt(0);
+                               //}
                                 switch (j)
                                 {
                                     case 0:
@@ -452,11 +452,11 @@ public class TimingManager : MonoBehaviour
                             if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
                             {
                                 // 컴포넌트를 비활성화
-                                if (KeyManager.instance.long4 == true)
-                                {
-                                    AddNote.instance.boxNoteList4[0].GetComponent<Note>().HideNote();
-                                    AddNote.instance.boxNoteList4.RemoveAt(0);
-                                }
+                                //if (KeyManager.instance.long4 == true)
+                                //{
+                                //    AddNote.instance.boxNoteList4[0].GetComponent<Note>().HideNote();
+                                //    AddNote.instance.boxNoteList4.RemoveAt(0);
+                                //}
                                 switch (j)
                                 {
                                     case 0:
@@ -502,217 +502,31 @@ public class TimingManager : MonoBehaviour
             switch (key)
             {
                 case 1:
-                    for (int i = 0; i < AddNote.instance.boxNoteList1.Count; i++)
+                    if (NoteMaster.instance.timer[0] > NoteMaster.instance.waitingTime)
                     {
-                        float t_notePosY = AddNote.instance.boxNoteList1[i].transform.position.y - 225;
-                        // 판정 순서 : Perfect -> Great -> Good -> Bad
-                        for (int j = 0; j < timingBoxs.Length; j++)
-                        {
-                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
-                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
-                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
-                            {
-                                switch (j)
-                                {
-                                    case 0:
-                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer1 = 0;
-                                        }
-                                        break;
-                                    case 1:
-                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer1 = 0;
-                                        }
-                                        break;
-                                    case 2:
-                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer1 = 0;
-                                        }
-                                        break;
-                                    case 3:
-                                        if (NoteMaster.instance.timer1 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer1 = 0;
-                                        }
-                                        break;
-                                    case 4:
-                                        TextManager.instance.comboCount = 0;
-                                        break;
-                                }
-                                return;
-                            }
-                        }
+                        TextManager.instance.comboCount++;
+                        NoteMaster.instance.timer[0] = 0;
                     }
                     break;
                 case 2:
-                    for (int i = 0; i < AddNote.instance.boxNoteList2.Count; i++)
+                    if (NoteMaster.instance.timer[1] > NoteMaster.instance.waitingTime)
                     {
-
-                        float t_notePosY = AddNote.instance.boxNoteList2[i].transform.position.y - 225;
-
-                        // 판정 순서 : Perfect -> Great -> Good -> Bad
-                        for (int j = 0; j < timingBoxs.Length; j++)
-                        {
-                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
-                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
-                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
-                            {
-                                // 컴포넌트를 비활성화
-
-                                switch (j)
-                                {
-                                    case 0:
-                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer2 = 0;
-                                        }
-                                        break;
-                                    case 1:
-                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer2 = 0;
-                                        }
-                                        break;
-                                    case 2:
-                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer2 = 0;
-                                        }
-                                        break;
-                                    case 3:
-                                        if (NoteMaster.instance.timer2 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer2 = 0;
-                                        }
-                                        break;
-                                    case 4:
-                                        TextManager.instance.comboCount = 0;
-                                        NoteMaster.instance.timer2 = 0;
-                                        break;
-                                }
-                                return;
-                            }
-                        }
+                        TextManager.instance.comboCount++;
+                        NoteMaster.instance.timer[1] = 0;
                     }
                     break;
                 case 3:
-                    for (int i = 0; i < AddNote.instance.boxNoteList3.Count; i++)
+                    if (NoteMaster.instance.timer[2] > NoteMaster.instance.waitingTime)
                     {
-
-                        float t_notePosY = AddNote.instance.boxNoteList3[i].transform.position.y - 225;
-
-                        // 판정 순서 : Perfect -> Great -> Good -> Bad
-                        for (int j = 0; j < timingBoxs.Length; j++)
-                        {
-                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
-                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
-                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
-                            {
-                                // 컴포넌트를 비활성화
-
-                                switch (j)
-                                {
-                                    case 0:
-                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer3 = 0;
-                                        }
-                                        break;
-                                    case 1:
-                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer3 = 0;
-                                        }
-                                        break;
-                                    case 2:
-                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer3 = 0;
-                                        }
-                                        break;
-                                    case 3:
-                                        if (NoteMaster.instance.timer3 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer3 = 0;
-                                        }
-                                        break;
-                                    case 4:
-                                        TextManager.instance.comboCount = 0;
-                                        NoteMaster.instance.timer3 = 0;
-                                        break;
-                                }
-                                return;
-                            }
-                        }
+                        TextManager.instance.comboCount++;
+                        NoteMaster.instance.timer[2] = 0;
                     }
                     break;
                 case 4:
-                    for (int i = 0; i < AddNote.instance.boxNoteList4.Count; i++)
+                    if (NoteMaster.instance.timer[3] > NoteMaster.instance.waitingTime)
                     {
-
-                        float t_notePosY = AddNote.instance.boxNoteList4[i].transform.position.y - 225;
-
-                        // 판정 순서 : Perfect -> Great -> Good -> Bad
-                        for (int j = 0; j < timingBoxs.Length; j++)
-                        {
-                            // timingBoxs[j].x 의 값이 판정 좌표 x보다 크거나 같거나
-                            // timingBoxs[j].y 의 값이 판정 좌표 y보다 작거나 같으면 실행
-                            if (timingBoxs[j].x <= t_notePosY && t_notePosY <= timingBoxs[j].y)
-                            {
-                                // 컴포넌트를 비활성화
-
-                                switch (j)
-                                {
-                                    case 0:
-                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer4 = 0;
-                                        }
-                                        break;
-                                    case 1:
-                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer4 = 0;
-                                        }
-                                        break;
-                                    case 2:
-                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer4 = 0;
-                                        }
-                                        break;
-                                    case 3:
-                                        if (NoteMaster.instance.timer4 > NoteMaster.instance.waitingTime)
-                                        {
-                                            TextManager.instance.comboCount++;
-                                            NoteMaster.instance.timer4 = 0;
-                                        }
-                                        break;
-                                    case 4:
-                                        TextManager.instance.comboCount = 0;
-                                        break;
-                                }
-                                return;
-                            }
-                        }
+                        TextManager.instance.comboCount++;
+                        NoteMaster.instance.timer[3] = 0;
                     }
                     break;
             }

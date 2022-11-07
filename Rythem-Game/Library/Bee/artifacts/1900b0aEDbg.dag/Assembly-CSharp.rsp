@@ -359,6 +359,7 @@
 "Assets/Script/Manager/DestroyManager.cs"
 "Assets/Script/Manager/KeyManager.cs"
 "Assets/Script/Manager/Scene.cs"
+"Assets/Script/Manager/SetNoteManager.cs"
 "Assets/Script/Manager/TextManager.cs"
 "Assets/Script/Manager/TimingManager.cs"
 "Assets/Script/Note/AddNote.cs"

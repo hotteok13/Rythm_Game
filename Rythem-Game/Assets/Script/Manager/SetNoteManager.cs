@@ -20,9 +20,9 @@ public class SetNoteManager : MonoBehaviour
         {
             if (gameObject.CompareTag("Note1"))
             {
-                if (AddNote.instance.boxNoteList1[i].layer == LayerMask.NameToLayer("LongNote"))
+                if (AddNote.instance.boxNoteList1[i].layer == LayerMask.NameToLayer("LongNote")&&KeyManager.instance.key[0]==false)
                 {
-                    if (Input.GetKeyDown(KeyCode.D)&&KeyManager.instance.longNote[0]==false)
+                    if (Input.GetKeyDown(KeyCode.D))
                     {
                         TimingManager.instance.LongCheckTiming(1, KeyManager.instance.longNote[0]);
                         KeyManager.instance.longNote[0] = true;
@@ -36,7 +36,6 @@ public class SetNoteManager : MonoBehaviour
 
                     if (Input.GetKeyUp(KeyCode.D))
                     {
-                        KeyManager.instance.key[0] = false;
                         KeyManager.instance.longNote[0] = false;
                         TimingManager.instance.LongCheckTiming(1, KeyManager.instance.longNote[0]);
                         NoteMaster.instance.timer[0] = 0;
@@ -49,12 +48,12 @@ public class SetNoteManager : MonoBehaviour
                     {
                         TimingManager.instance.CheckTiming(1, KeyManager.instance.key[0]);
                         KeyManager.instance.key[0] = true;
-                        KeyManager.instance.longNote[0] = true;
+                        //KeyManager.instance.longNote[0] = true;
                     }
                     if (Input.GetKeyUp(KeyCode.D))
                     {
                         KeyManager.instance.key[0] = false;
-                        KeyManager.instance.longNote[0] = false;
+                        //KeyManager.instance.longNote[0] = false;
                     }
                     break;
                 }

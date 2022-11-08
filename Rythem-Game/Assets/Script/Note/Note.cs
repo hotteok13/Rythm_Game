@@ -11,6 +11,7 @@ public class Note : MonoBehaviour
     private Image noteImage;
 
 
+
     private void Awake()
     {
         if (instacne == null)
@@ -41,9 +42,22 @@ public class Note : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && NoteMaster.instance.noteSpeed < 1000 && NoteMaster.instance.noteSpeedSetting == false)
         {
             NoteMaster.instance.noteSpeed += 100;
+            NoteMaster.instance.notePosition += 100;
             for (int i = 0; i < AddNote.instance.boxNoteList1.Count; i++)
             {
-                AddNote.instance.boxNoteList1[i].transform.position = new Vector2(AddNote.instance.boxNoteList1[i].transform.position.x, AddNote.instance.boxNoteList1[i].transform.position.y + (100*(i+1)));
+                AddNote.instance.boxNoteList1[i].transform.position = new Vector2(AddNote.instance.boxNoteList1[i].transform.position.x, AddNote.instance.boxNoteList1[i].transform.position.y + (NoteMaster.instance.notePosition * (i+1)));
+            }
+            for (int i = 0; i < AddNote.instance.boxNoteList2.Count; i++)
+            {
+                AddNote.instance.boxNoteList2[i].transform.position = new Vector2(AddNote.instance.boxNoteList2[i].transform.position.x, AddNote.instance.boxNoteList2[i].transform.position.y + (NoteMaster.instance.notePosition * (i + 1)));
+            }
+            for (int i = 0; i < AddNote.instance.boxNoteList3.Count; i++)
+            {
+                AddNote.instance.boxNoteList3[i].transform.position = new Vector2(AddNote.instance.boxNoteList3[i].transform.position.x, AddNote.instance.boxNoteList3[i].transform.position.y + (NoteMaster.instance.notePosition * (i + 1)));
+            }
+            for (int i = 0; i < AddNote.instance.boxNoteList4.Count; i++)
+            {
+                AddNote.instance.boxNoteList4[i].transform.position = new Vector2(AddNote.instance.boxNoteList4[i].transform.position.x, AddNote.instance.boxNoteList4[i].transform.position.y + (NoteMaster.instance.notePosition * (i + 1)));
             }
             NoteMaster.instance.noteSpeedSetting = true;
 

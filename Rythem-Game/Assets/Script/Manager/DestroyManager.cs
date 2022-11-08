@@ -8,23 +8,27 @@ public class DestroyManager : MonoBehaviour
     {
         if (collision.CompareTag("Note1"))
         {
-            AddNote.instance.boxNoteList1.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            //AddNote.instance.boxNoteList1.Remove(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
         if (collision.CompareTag("Note2"))
         {
-            AddNote.instance.boxNoteList2.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+            //AddNote.instance.boxNoteList2.Remove(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         if (collision.CompareTag("Note3"))
         {
-            AddNote.instance.boxNoteList3.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+            //AddNote.instance.boxNoteList3.Remove(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
         if (collision.CompareTag("Note4"))
         {
-            AddNote.instance.boxNoteList4.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+            //AddNote.instance.boxNoteList4.Remove(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }

@@ -6,6 +6,8 @@ public class NoteMaster : MonoBehaviour
 {
     public float noteSpeed = 400.0f;
 
+    public float notePosition = 0.0f; 
+
     public float[] BPM;
 
     public bool noteSpeedSetting;
